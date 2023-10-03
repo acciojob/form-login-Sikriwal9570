@@ -1,17 +1,17 @@
-// Define a function to handle form submission
-function getFormValue() {
+function getFormvalue() {
   // Get the form element by its ID
-  const form = document.getElementById("myForm");
+  const form = document.getElementById('form1');
 
-  // Get the values of the first and last name input fields
-  const firstName = form.elements["firstName"].value;
-  const lastName = form.elements["lastName"].value;
+  // Get the values of the First and Last name inputs by their names
+  const firstName = form.elements.fname.value;
+  const lastName = form.elements.lname.value;
 
-  // Check if both first and last names are filled
-  if (firstName && lastName) {
-    // Display the values using alert
-    alert(`First Name: ${firstName}\nLast Name: ${lastName}`);
-  } else {
-    alert("Please fill in both first and last names.");
-  }
+  // Display the values using an alert
+  alert(`First Name: ${firstName}\nLast Name: ${lastName}`);
 }
+
+// Prevent the form from submitting and call the getFormvalue function
+document.getElementById('form1').addEventListener('submit', function (event) {
+  event.preventDefault();
+  getFormvalue();
+});
